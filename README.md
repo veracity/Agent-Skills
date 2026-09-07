@@ -11,7 +11,7 @@ The skills live under `skills/`. Install them with the Skills CLI as shown below
 With Node.js and `npx` available, run this command from the project where you want to use the skills:
 
 ```bash
-npx skills add https://github.com/veracity/Veracity-Agent-Skills
+npx skills add https://github.com/veracity/Agent-Skills
 ```
 
 ---
