@@ -2,17 +2,47 @@
 
 A collection of coding-agent skills for scaffolding and configuring **Veracity** web applications across **.NET, NodeJS, and Python** backends plus a **React** frontend. Each skill is a reusable instruction set that compatible coding agents — including GitHub Copilot, Claude Code, OpenAI Codex, and others — can follow to automate a specific part of your project setup, from creating an API backend to wiring up Veracity login in the browser.
 
-The skills live under `skills/`. Install them with the Skills CLI as shown below, or configure your coding-agent tool to discover or import this directory using its supported skills or custom-instructions mechanism. Discovery and activation behavior varies by tool; once configured, you can describe what you want to do or invoke a skill explicitly by name.
+The skills live under `skills/`. Install them with the Skills CLI, GitHub Copilot CLI, or APM as shown below, or configure your coding-agent tool to discover or import this directory using its supported skills or custom-instructions mechanism. Discovery and activation behavior varies by tool; once configured, you can describe what you want to do or invoke a skill explicitly by name.
 
 ---
 
 ## Installation
+
+Choose one of the following installation methods.
+
+### Skills CLI
 
 With Node.js and `npx` available, run this command from the project where you want to use the skills:
 
 ```bash
 npx skills add https://github.com/veracity/Agent-Skills
 ```
+
+### GitHub Copilot CLI
+
+With [GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli) installed and authenticated, install this repository directly as a plugin:
+
+```bash
+copilot plugin install veracity/Agent-Skills
+```
+
+The repository's [`plugin.json`](plugin.json) registers the `veracity-agent-skills` plugin and exposes all skills under `skills/`. No marketplace registration is required. Start a new Copilot CLI session after installation, then request a skill by name, for example: `Use the veracity-auth-net skill to add authentication to my project.`
+
+### APM (Agent Package Manager)
+
+Install [APM](https://microsoft.github.io/apm/getting-started/installation/), then run this command from the project where you want to use the skills:
+
+```bash
+apm install veracity/Agent-Skills --target copilot
+```
+
+APM reads this repository's [`apm.yml`](apm.yml), adds the package to your project's dependencies, and deploys its skills for Copilot. It creates a project manifest if one does not already exist. To install for multiple agents, specify comma-separated targets:
+
+```bash
+apm install veracity/Agent-Skills --target claude,copilot,cursor
+```
+
+Commit your project's `apm.yml` and `apm.lock.yaml` so teammates can restore the same dependencies with `apm install`. This repository's manifest declares Claude, Copilot, and Cursor targets; the explicit `--target` option selects the agents for the consuming project without relying on auto-detection.
 
 ---
 
