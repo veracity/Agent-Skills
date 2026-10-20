@@ -1,0 +1,17 @@
+name: veracity-agent-skills
+version: 1.0.0
+description: A collection of coding-agent skills for scaffolding and configuring Veracity
+  web applications across .NET, NodeJS, and Python backends plus a React frontend.
+author: Tong, Xiao Gang Tony
+# Which agent platforms to deploy to.
+# Resolution order: --target flag > this field > auto-detect from filesystem.
+# Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, grok-build, kiro, opencode, vscode, windsurf
+targets:
+- claude
+- copilot
+- cursor
+dependencies:
+  apm: []
+  mcp: []
+includes: auto
+scripts: {}

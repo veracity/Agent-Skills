@@ -1,0 +1,12 @@
+{
+  "name": "veracity-agent-skills",
+  "version": "1.0.0",
+  "description": "A collection of coding-agent skills for scaffolding and configuring Veracity  web applications across .NET, NodeJS, and Python backends plus a React frontend.",
+  "author": {
+    "name": "Tong, Xiao Gang Tony"
+  },
+  "license": "MIT",
+  "category": "coding-agent",
+  "tags": ["coding-agent", "veracity", "scaffolding", "configuration"],
+  "skills": "skills"
+}
